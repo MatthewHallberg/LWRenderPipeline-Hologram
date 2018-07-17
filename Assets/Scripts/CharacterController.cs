@@ -10,9 +10,11 @@ public class CharacterController : MonoBehaviour {
 
 	private Animator anim;
 	private Rigidbody rb;
+	private Vector3 startPosition;
 
 	// Use this for initialization
 	void Start () {
+		startPosition = transform.localPosition;
 		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody> ();
 	}
@@ -20,6 +22,12 @@ public class CharacterController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//respawn
+		if (transform.localPosition.y < -.5f) {
+			transform.localPosition = startPosition;
+		}
+
+		//move character from joystick input
 		float x = CrossPlatformInputManager.GetAxis ("Horizontal");
 		float y = CrossPlatformInputManager.GetAxis ("Vertical");
 

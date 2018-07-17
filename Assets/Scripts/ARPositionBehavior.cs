@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class ARPositionBehavior : MonoBehaviour {
 
-	public void OnCharacterPlaced () {
-		Debug.Log ("here");
+	public GameObject PlaneFinder;
+
+	private void Update () {
+		if (Input.GetMouseButtonDown (1)) {
+			ActivatePlaneFinder (true);
+		}
+	}
+
+	public void ActivatePlaneFinder (bool active) {
+		PlaneFinder.SetActive (active);
 	}
 }
