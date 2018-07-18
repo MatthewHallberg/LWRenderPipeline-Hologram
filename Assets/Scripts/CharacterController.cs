@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour {
 
-	private const float speed = .5f;
+	private const float speed = .4f;
 
 	private Animator anim;
 	private Rigidbody rb;
